@@ -22,10 +22,10 @@ def get_overlapped(entries):
 			sleep_minute = 0
 	sleepiest = 0
 	for guard in guards.keys():
-		sleep = sum(guards[guard])
+		sleep = max(guards[guard])
 		if sleep > sleepiest:
 			print(guard)
-			print(sum(guards[guard]))
+			print(guards[guard])
 			print(guards[guard].index(max(guards[guard])))
 			sleepiest = sleep
 
@@ -43,4 +43,4 @@ with open('input.txt','r') as f:
 	entries = sorted(entries, key=lambda x: x[3])[::-1]
 	get_overlapped(entries)
 
-# 9271
+# 190566
